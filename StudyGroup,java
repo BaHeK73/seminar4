@@ -1,0 +1,11 @@
+public class StudyGroup
+{
+    public Teacher Teacher { get; set; }
+    public List<Student> Students { get; set; }
+
+    public StudyGroup(Teacher teacher, List<Student> students)
+    {
+        Teacher = teacher;
+        Students = students;
+    }
+}

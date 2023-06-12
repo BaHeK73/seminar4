@@ -1,0 +1,20 @@
+public class Controller
+{
+    private StudentService _studentService;
+    private TeacherService _teacherService;
+    private StudyGroupService _studyGroupService;
+
+    public Controller(StudentService studentService, TeacherService teacherService, StudyGroupService studyGroupService)
+    {
+        _studentService = studentService;
+        _teacherService = teacherService;
+        _studyGroupService = studyGroupService;
+    }
+
+    public StudyGroup CreateStudyGroup(int teacherId, List<int> studentIds)
+    {
+        var teacher = _teacherService.GetTeacherById(teacherId);
+        var students = _studentService.GetStudentsByIds(studentIds);
+        return _studyGroupService.CreateStudyGroup(teacher, students);
+    }
+}

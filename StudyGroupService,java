@@ -1,0 +1,7 @@
+public class StudyGroupService
+{
+    public StudyGroup CreateStudyGroup(Teacher teacher, List<Student> students)
+    {
+        return new StudyGroup(teacher, students);
+    }
+}
